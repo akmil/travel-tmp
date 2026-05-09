@@ -24,7 +24,6 @@ export const App = () => {
 				<ListingGrid />
 				<ShowMoreButton />
 			</main>
-
 			<Footer />
 
 			<FilterModal
