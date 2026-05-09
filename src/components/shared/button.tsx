@@ -1,15 +1,15 @@
 const BASE_CLASSES =
-	'flex items-center justify-center cursor-pointer hover:opacity-90 transition-opacity h-16 bg-[#FF5F00] rounded-2xl text-base font-semibold'
+	'flex items-center justify-center cursor-pointer hover:opacity-90 transition-opacity h-16 px-4 rounded-2xl text-base font-semibold'
 
 const VARIANT_CLASSES = {
 	default:
-		'bg-primary text-white hover:bg-primary-muted active:bg-primary-accent ' +
-		'data-loading:bg-primary data-loading:text-white',
+		'bg-primary text-primary-foreground hover:bg-primary-muted active:bg-primary-accent ' +
+		'data-loading:bg-primary data-loading:text-primary-foreground',
 	outlined:
 		'border border-primary bg-transparent text-primary hover:bg-primary/10 active:bg-primary/20 ' +
 		'data-loading:border-primary data-loading:text-primary',
 	ghost:
-		'bg-transparent text-black hover:text-primary-accent active:text-primary-accent'
+		'bg-transparent text-foreground hover:text-primary-accent active:text-primary-accent'
 } as const
 
 type ButtonVariant = keyof typeof VARIANT_CLASSES
