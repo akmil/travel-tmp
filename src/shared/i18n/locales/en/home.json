@@ -1,0 +1,25 @@
+{
+	"navbar": {
+		"brandFirst": "WinWin",
+		"brandSecond": "Travel"
+	},
+	"hero": {
+		"greeting": "Hello, Bob",
+		"tagline": "Creating new memories",
+		"apply": "Apply"
+	},
+	"search": {
+		"cityPlaceholder": "City, address, hotel name",
+		"addDates": "Add dates",
+		"addGuests": "Add guests"
+	},
+	"results": {
+		"activeFilter": "Dubai, UAE · 2 adults · 1 room",
+		"count": "We found {{count}} housing options",
+		"showOnMap": "Show on map"
+	},
+	"listing": {
+		"highRating": "High rating"
+	},
+	"showMore": "Show next 12 options"
+}
