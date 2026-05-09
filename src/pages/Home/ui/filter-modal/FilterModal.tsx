@@ -1,10 +1,8 @@
-import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 
 import filterData from '@/shared/temp/filterData.json'
 import { XIcon } from '@components/mocked/icons'
 import { Button } from '@components/shared/button'
-// import { Dialog } from '@/components/shared/dialog'
 import {
 	Dialog,
 	DialogContent,
@@ -13,7 +11,9 @@ import {
 	DialogTitle
 } from '@components/shared/dialog'
 
+import { ConfirmDialog } from './ConfirmDialog'
 import { FilterSection } from './Filter.Section'
+import { useFilterModal } from './useFilterModal'
 
 interface FilterModalProps {
 	onClose: () => void
@@ -21,13 +21,16 @@ interface FilterModalProps {
 }
 
 export const FilterModal = ({ onClose, open }: FilterModalProps) => {
-	const countOffers = 42
 	const { t } = useTranslation('filter')
-	const [checkedItems, setCheckedItems] = useState<Record<string, boolean>>({})
-
-	const handleToggle = (key: string) => {
-		setCheckedItems(prev => ({ ...prev, [key]: !prev[key] }))
-	}
+	const {
+		confirmOpen,
+		checkedItems,
+		countOffers,
+		handleToggle,
+		handleApply,
+		handleConfirm,
+		handleCancel
+	} = useFilterModal({ onClose, open })
 
 	return (
 		<Dialog
@@ -86,10 +89,17 @@ export const FilterModal = ({ onClose, open }: FilterModalProps) => {
 					<div className="flex w-full justify-center mt-4">
 						<Button
 							text={`${t('modal.apply')} (${t('modal.offerCount', { countOffers })})`}
-							onClick={onClose}
+							onClick={handleApply}
+							disabled={!Object.values(checkedItems).some(Boolean)}
 						/>
 					</div>
 				</DialogFooter>
+
+				<ConfirmDialog
+					open={confirmOpen}
+					onConfirm={handleConfirm}
+					onCancel={handleCancel}
+				/>
 			</DialogContent>
 		</Dialog>
 	)

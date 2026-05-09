@@ -5,6 +5,12 @@
 		"offerCount": "{{countOffers}} offers",
 		"close": "Close"
 	},
+	"confirmDialog": {
+		"title": "Apply filters?",
+		"description": "Are you sure you want to apply the selected filters?",
+		"confirm": "Confirm",
+		"cancel": "Cancel"
+	},
 	"items": {
 		"MEAL_OPTIONS": {
 			"name": "Meal options",

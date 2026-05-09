@@ -1,5 +1,5 @@
 const BASE_CLASSES =
-	'flex items-center justify-center cursor-pointer hover:opacity-90 transition-opacity h-16 px-4 rounded-2xl text-base font-semibold'
+	'flex items-center justify-center cursor-pointer hover:opacity-90 transition-opacity h-16 px-4 rounded-2xl text-base font-semibold disabled:bg-transparent disabled:text-foreground/40 disabled:cursor-not-allowed disabled:pointer-events-none'
 
 const VARIANT_CLASSES = {
 	default:
