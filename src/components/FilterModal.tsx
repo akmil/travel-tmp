@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next'
 
 import filterData from '../shared/temp/filterData.json'
 import { XIcon } from './mocked/icons'
+import { Button } from './shared/button'
 import { CheckboxItem } from './shared/checkbox'
 
 const COLUMNS = 3
@@ -87,13 +88,15 @@ export const FilterModal = ({ onClose }: FilterModalProps) => {
 					<h2 className="text-[40px] font-medium text-[#31393C]">
 						{t('modal.title')}
 					</h2>
-					<button
+
+					<Button
+						text={t('modal.close')}
 						onClick={onClose}
-						className="flex items-center justify-center cursor-pointer hover:opacity-70 transition-opacity text-[#31393C]"
 						aria-label={t('modal.close')}
+						variant="ghost"
 					>
 						<XIcon size={28} />
-					</button>
+					</Button>
 				</div>
 
 				{/* Top divider */}
@@ -125,12 +128,10 @@ export const FilterModal = ({ onClose }: FilterModalProps) => {
 
 					{/* Apply button */}
 					<div className="flex justify-center mt-4">
-						<button
+						<Button
+							text={t('modal.apply')}
 							onClick={onClose}
-							className="flex items-center justify-center cursor-pointer hover:opacity-90 transition-opacity w-[184px] h-16 bg-[#FF5F00] rounded-2xl text-white text-base font-semibold"
-						>
-							{t('modal.apply')}
-						</button>
+						/>
 					</div>
 				</div>
 			</div>
