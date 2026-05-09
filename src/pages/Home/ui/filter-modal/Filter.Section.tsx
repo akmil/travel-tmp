@@ -1,4 +1,4 @@
-import { CheckboxItem } from '../shared/checkbox'
+import { CheckboxItem } from '@components/shared/checkbox'
 
 interface FilterSectionProps {
 	title: string
