@@ -37,7 +37,7 @@ export const FilterModal = ({ onClose, open }: FilterModalProps) => {
 			open={open}
 			onOpenChange={opened => !opened && onClose()}
 		>
-			<DialogContent className="sm:max-w-md rounded-2xl">
+			<DialogContent className="sm:max-w-md rounded-2xl top-50">
 				<DialogHeader>
 					<div className="flex items-center gap-3 mb-1">
 						<DialogTitle className="text-base font-semibold">
