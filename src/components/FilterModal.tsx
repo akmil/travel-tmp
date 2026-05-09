@@ -32,7 +32,7 @@ const FilterSection = ({
 
 	return (
 		<div>
-			<h3 className="mb-4 text-2xl font-medium text-[#31393C]">{title}</h3>
+			<h3 className="mb-4 text-2xl font-medium text-foreground">{title}</h3>
 			<div className={`grid gap-4 mb-6 ${gridColsClass}`}>
 				{columns.map((col, colIdx) => (
 					<div
@@ -50,7 +50,7 @@ const FilterSection = ({
 					</div>
 				))}
 			</div>
-			<div className="h-[2px] bg-[#B4B4B4] mb-6" />
+			<div className="h-0.5 bg-border mb-6" />
 		</div>
 	)
 }
@@ -75,21 +75,21 @@ export const FilterModal = ({ onClose }: FilterModalProps) => {
 
 	return (
 		<div
-			className="fixed inset-0 flex justify-center z-50 bg-[rgba(27,27,27,0.3)] backdrop-blur-[12.5px]"
+			className="fixed inset-0 flex justify-center z-50 bg-black/30 backdrop-blur-md"
 			onClick={handleOverlayClick}
 		>
 			<div
-				className="relative bg-white overflow-y-auto w-[1280px] max-h-[calc(100vh-80px)] mt-20 rounded-2xl"
+				className="relative bg-white overflow-y-auto w-[80rem] max-h-[calc(100vh-5rem)] mt-20 rounded-2xl"
 				onClick={e => e.stopPropagation()}
 			>
 				{/* Header */}
 				<div className="sticky top-0 bg-white z-10 flex items-center justify-between px-10 pt-8 pb-6">
-					<h2 className="text-[40px] font-medium text-[#31393C]">
+					<h2 className="text-4xl font-medium text-foreground">
 						{t('modal.title')}
 					</h2>
 					<button
 						onClick={onClose}
-						className="flex items-center justify-center cursor-pointer hover:opacity-70 transition-opacity text-[#31393C]"
+						className="flex items-center justify-center cursor-pointer hover:opacity-70 transition-opacity text-foreground"
 						aria-label={t('modal.close')}
 					>
 						<XIcon size={28} />
@@ -97,7 +97,7 @@ export const FilterModal = ({ onClose }: FilterModalProps) => {
 				</div>
 
 				{/* Top divider */}
-				<div className="h-[2px] bg-[#B4B4B4] mx-10" />
+				<div className="h-0.5 bg-border mx-10" />
 
 				{/* Filter sections driven by filterData.json */}
 				<div className="px-10 pt-8 pb-10">
@@ -127,7 +127,7 @@ export const FilterModal = ({ onClose }: FilterModalProps) => {
 					<div className="flex justify-center mt-4">
 						<button
 							onClick={onClose}
-							className="flex items-center justify-center cursor-pointer hover:opacity-90 transition-opacity w-[184px] h-16 bg-[#FF5F00] rounded-2xl text-white text-base font-semibold"
+							className="flex items-center justify-center cursor-pointer hover:opacity-90 transition-opacity w-[11.5rem] h-16 bg-primary rounded-2xl text-primary-foreground text-base font-semibold"
 						>
 							{t('modal.apply')}
 						</button>
