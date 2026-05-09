@@ -33,7 +33,7 @@ const FilterSection = ({
 
 	return (
 		<div>
-			<h3 className="mb-4 text-2xl font-medium text-[#31393C]">{title}</h3>
+			<h3 className="mb-4 text-2xl font-medium text-foreground">{title}</h3>
 			<div className={`grid gap-4 mb-6 ${gridColsClass}`}>
 				{columns.map((col, colIdx) => (
 					<div
@@ -51,7 +51,7 @@ const FilterSection = ({
 					</div>
 				))}
 			</div>
-			<div className="h-[2px] bg-[#B4B4B4] mb-6" />
+			<div className="h-0.5 bg-border mb-6" />
 		</div>
 	)
 }
@@ -76,16 +76,16 @@ export const FilterModal = ({ onClose }: FilterModalProps) => {
 
 	return (
 		<div
-			className="fixed inset-0 flex justify-center z-50 bg-[rgba(27,27,27,0.3)] backdrop-blur-[12.5px]"
+			className="fixed inset-0 flex justify-center z-50 bg-black/30 backdrop-blur-md"
 			onClick={handleOverlayClick}
 		>
 			<div
-				className="relative bg-white overflow-y-auto w-[1280px] max-h-[calc(100vh-80px)] mt-20 rounded-2xl"
+				className="relative bg-white overflow-y-auto w-[80rem] max-h-[calc(100vh-5rem)] mt-20 rounded-2xl"
 				onClick={e => e.stopPropagation()}
 			>
 				{/* Header */}
 				<div className="sticky top-0 bg-white z-10 flex items-center justify-between px-10 pt-8 pb-6">
-					<h2 className="text-[40px] font-medium text-[#31393C]">
+					<h2 className="text-4xl font-medium text-foreground">
 						{t('modal.title')}
 					</h2>
 
@@ -100,7 +100,7 @@ export const FilterModal = ({ onClose }: FilterModalProps) => {
 				</div>
 
 				{/* Top divider */}
-				<div className="h-[2px] bg-[#B4B4B4] mx-10" />
+				<div className="h-0.5 bg-border mx-10" />
 
 				{/* Filter sections driven by filterData.json */}
 				<div className="px-10 pt-8 pb-10">
